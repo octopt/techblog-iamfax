@@ -1,0 +1,7 @@
+FROM python:3.12
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV PYTHONUNBUFFERED=1
+WORKDIR /app
+COPY ./requirements.lock /app
+RUN pip install -r requirements.lock
+

@@ -1,0 +1,13 @@
+services:
+  app:
+    image: strawberry-django
+    volumes:
+      - ./:/app/    
+    build:
+      context: .
+      dockerfile: Dockerfile_django    
+    working_dir: /app/django
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"    
+  
